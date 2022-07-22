@@ -7,10 +7,10 @@ const Counter =()=>{
    const count=useSelector(state=>state.count)
 //    console.log(state, "jfdi")
     const handleInc =()=>{
-        dispatch(addCnt());
+        dispatch(addCnt(5));
     }
     const handleDec =()=>{
-      dispatch(decCnt())
+      dispatch(decCnt(10))
     }
     return(
         <>

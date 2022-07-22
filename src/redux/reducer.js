@@ -8,13 +8,13 @@ const initialState={
         case ADD_COUNT:
             return{
                 ...State,
-                count:State.count+1
+                count:State.count+action.payload
             }
 
         case DEC_COUNT:
             return{
                 ...State,
-                count:State.count-1
+                count:State.count-action.payload
             }
             default:
                 return{...State};
