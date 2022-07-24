@@ -3,11 +3,11 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
-import { addTodoError, addTodoSuccess, getTodoError, getTodoLoading, getTodoSuccess } from "../redux/actions"
+import { addTodoError, addTodoLoading, addTodoSuccess, deleteTodoError, deleteTodoSuccess, getTodoError, getTodoLoading, getTodoSuccess, patchTodoError, patchTodoLoading, patchTodoSuccess } from "../redux/todo/actions"
 const Todo=()=>{
     const[text ,setText] =useState("")
     const dispatch =useDispatch();
-    const {loading ,error, data} =useSelector(state=> state.todos)
+    const {loading ,error, data} =useSelector(state=> state.todo.todos)
 
     const getTodos =()=>{
         dispatch(getTodoLoading()); 
@@ -28,6 +28,7 @@ const Todo=()=>{
        
     },[])
     const handleAdd=()=>{
+        dispatch(addTodoLoading())
         axios({
             method:"post",
             url:"http://localhost:8000/todos",
@@ -42,6 +43,38 @@ const Todo=()=>{
         }).catch(err=>{
             dispatch(addTodoError());
         })
+        setText("")
+    }
+
+    const handleToggle=(id,status)=>{
+        dispatch(patchTodoLoading())
+        axios({
+            method:"patch",
+            url:`http://localhost:8000/todos/${id}`,
+            data:{
+               status: !status
+            }
+        }).then(res=>{
+            dispatch(patchTodoSuccess());
+            
+        getTodos()
+        }).catch(err=>{
+            dispatch(patchTodoError());
+        })
+    }
+    const handleDelete=(id)=>{
+        dispatch(patchTodoLoading())
+        axios({
+            method:"delete",
+            url:`http://localhost:8000/todos/${id}`,
+           
+        }).then(res=>{
+            dispatch(deleteTodoSuccess());
+            
+             getTodos()
+        }).catch(err=>{
+            dispatch(deleteTodoError());
+        })
     }
     return(
         <>
@@ -51,7 +84,19 @@ const Todo=()=>{
             loading ?<div>...lodaing</div>
             :error ? <div>somthing went  wrong  </div>
             :data.map((el)=>{
-              return  <li key={el.id}>{el.title}</li>
+              return  <li  key={el.id}>
+                <div>
+
+                {el.title}
+                </div>
+                <div>
+                    <button onClick={()=>handleToggle(el.id)}>{el.status ? "done" : "not Done"}</button>
+                    <button onClick={()=>handleDelete(el.id)}>Delete</button>
+
+                </div>
+              
+              
+              </li>
             })
              
             

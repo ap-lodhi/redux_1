@@ -1,54 +1,49 @@
 {
   "todos": [
     {
-      "title": "dsa",
-      "status": false,
-      "id": 1
-    },
-    {
-      "title": "algo",
-      "status": false,
-      "id": 2
-    },
-    {
-      "title": "js",
-      "status": false,
-      "id": 3
-    },
-    {
-      "title": "Anil",
-      "status": false,
-      "id": 4
-    },
-    {
-      "title": "Anil",
-      "status": false,
-      "id": 5
-    },
-    {
       "title": "react",
       "status": false,
       "id": 6
     },
     {
       "title": "ninjja",
-      "status": false,
+      "status": true,
       "id": 7
     },
     {
-      "title": "codder",
-      "status": false,
-      "id": 8
-    },
-    {
       "title": "json",
-      "status": false,
+      "status": true,
       "id": 9
     },
     {
       "title": "masai",
-      "status": false,
+      "status": true,
       "id": 10
+    },
+    {
+      "title": "new add",
+      "status": true,
+      "id": 11
+    },
+    {
+      "title": "learning react ",
+      "status": true,
+      "id": 12
+    },
+    {
+      "title": "redux tool ",
+      "status": false,
+      "id": 13
+    },
+    {
+      "title": "hii",
+      "status": true,
+      "id": 14
+    },
+    {
+      "title": "anil",
+      "status": false,
+      "id": 15
     }
   ]
 }
