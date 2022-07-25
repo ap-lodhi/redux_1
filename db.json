@@ -1,29 +1,9 @@
 {
   "todos": [
     {
-      "title": "react",
-      "status": false,
-      "id": 6
-    },
-    {
-      "title": "ninjja",
-      "status": true,
-      "id": 7
-    },
-    {
       "title": "json",
       "status": true,
       "id": 9
-    },
-    {
-      "title": "masai",
-      "status": true,
-      "id": 10
-    },
-    {
-      "title": "new add",
-      "status": true,
-      "id": 11
     },
     {
       "title": "learning react ",
@@ -32,7 +12,7 @@
     },
     {
       "title": "redux tool ",
-      "status": false,
+      "status": true,
       "id": 13
     },
     {
@@ -44,6 +24,31 @@
       "title": "anil",
       "status": false,
       "id": 15
+    },
+    {
+      "title": "neww",
+      "status": false,
+      "id": 16
+    },
+    {
+      "title": "node",
+      "status": false,
+      "id": 17
+    },
+    {
+      "title": "",
+      "status": false,
+      "id": 18
+    },
+    {
+      "title": "fnj",
+      "status": false,
+      "id": 19
+    },
+    {
+      "title": "masai",
+      "status": false,
+      "id": 20
     }
   ]
 }
